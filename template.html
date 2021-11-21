@@ -42,7 +42,7 @@
     <div class="container">
       <div class="d-flex">
         <div class="p-2 flex-grow-1">
-          <a href="template.html" class="site-logo mx-auto d-block">
+          <a href="index.html" class="site-logo mx-auto d-block">
             <img src="assets/logo.png" alt="Image" class="img-fluid">
           </a>
         </div>
@@ -65,7 +65,7 @@
             <nav class="site-navigation position-relative text-left">
               <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-md-block border-none">
                 <li class="active">
-                  <a href="template.html" class="nav-link text-left">Главная</a>
+                  <a href="index.html" class="nav-link text-left">Главная</a>
                 </li>
                 <li>
                   <a href="#products" class="nav-link text-left">Коллекция вин</a>
@@ -134,9 +134,10 @@
           {% for wine in list_wine %}
             <div class="col-lg-4 mb-5 col-md-6">
               <div class="wine_v_1 text-center pb-4 pt-5">
-                <img src="https://dvmn.org/filer/canonical/1569944855/354/" class="card-img-top" alt="...">
                 {% if wine.Картинка %}
                   <img src="/images/{{wine.Картинка}}" alt="Image" class="img-fluid">
+                {% else %}
+                  <img src="https://dvmn.org/filer/canonical/1569944855/354/" class="img-fluid" alt="no Image">
                 {% endif %}
                 {% if wine.Акция %}
                   <img src="assets/profitable.png"
