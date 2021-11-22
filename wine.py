@@ -12,17 +12,17 @@ def get_wines():
     xls_path = main.get_config_param("wine", "path")
     wine_category = main.get_config_param("wine", "wine_category")
 
-    read_xls_to_list = pandas.read_excel(
+    data_from_excel = pandas.read_excel(
         xls_path, sheet_name='Лист1',
         na_values=['N/A', 'NA'], keep_default_na=False
         )
 
-    xls_wines = read_xls_to_list.to_dict(orient='records')
+    wines = data_from_excel.to_dict(orient='records')
 
-    wines = defaultdict(list)
-    for keys in xls_wines:
-        wines[keys[wine_category]].append(keys)
-    return wines
+    out_wines = defaultdict(list)
+    for item in wines:
+        out_wines[item[wine_category]].append(item)
+    return out_wines
 
 
 def get_age_factory():
