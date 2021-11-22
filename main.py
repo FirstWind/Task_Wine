@@ -40,7 +40,7 @@ def run_http_server():
     httpd = server_class(server_address, handler_class)
 
     ip, port = httpd.socket.getsockname()
-    print("Serving HTTP on", ip, "port", port, "...")
+    print(f"Server is Run! Click url http://{ip}:{port}")
     httpd.serve_forever()
 
 
