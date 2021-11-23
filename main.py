@@ -1,3 +1,4 @@
+import pprint
 import sys
 from configparser import ConfigParser
 from http.server import HTTPServer, SimpleHTTPRequestHandler
